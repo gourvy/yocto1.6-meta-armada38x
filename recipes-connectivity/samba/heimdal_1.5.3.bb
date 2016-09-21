@@ -17,6 +17,7 @@ SRC_URI[sha256sum] = "aac27bedb33c341b6aed202af07ccc816146a893148721f8123abbbf93
 inherit autotools pkgconfig
 
 EXTRA_OECONF = " \
+	LIBS=-pthread \
 	--disable-shared \
 	--enable-static \
 	--without-openldap \
