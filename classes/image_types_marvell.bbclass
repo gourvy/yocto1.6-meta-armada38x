@@ -28,7 +28,7 @@ IMAGE_CMD_sdcard () {
 	dd if=${SDCARD_ROOTFS} of=${SDCARD} conv=notrunc seek=1 bs=${IMAGE_ROOTFS_ALIGNMENT}M && sync && sync
 
 	# write u-boot image
-	if [ "${UBOOT_SUFFIX}" == "mmc" ]
+	if [ "${UBOOT_SUFFIX}" = "mmc" ]
 	then
 		dd if="${DEPLOY_DIR_IMAGE}/u-boot.${UBOOT_SUFFIX}" of=${SDCARD} conv=notrunc seek=1 bs=512 && sync && sync
 	fi
